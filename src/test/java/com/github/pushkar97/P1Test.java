@@ -1,9 +1,9 @@
 package com.github.pushkar97;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.stream.Stream;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -25,7 +25,6 @@ class P1Test {
   @ParameterizedTest
   @MethodSource
   void twoSum(int[] arr, int sum, int[] expected) {
-    int[] range = p1.twoSum(arr, sum);
-    Assertions.assertThat(range).isEqualTo(expected);
+    assertThat(p1.twoSum(arr, sum)).isEqualTo(expected);
   }
 }

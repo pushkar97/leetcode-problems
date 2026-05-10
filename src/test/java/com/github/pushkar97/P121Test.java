@@ -1,9 +1,9 @@
 package com.github.pushkar97;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.stream.Stream;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -23,7 +23,6 @@ class P121Test {
   @ParameterizedTest
   @MethodSource
   void maxProfit(int[] prices, int expected) {
-    int profit = p121.maxProfit(prices);
-    Assertions.assertThat(profit).isEqualTo(expected);
+    assertThat(p121.maxProfit(prices)).isEqualTo(expected);
   }
 }

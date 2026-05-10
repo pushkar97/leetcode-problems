@@ -1,9 +1,9 @@
 package com.github.pushkar97;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.stream.Stream;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -28,7 +28,6 @@ class P20Test {
   @ParameterizedTest
   @MethodSource
   void isValid(String s, boolean expected) {
-    boolean isValid = p20.isValid(s);
-    Assertions.assertThat(isValid).isEqualTo(expected);
+    assertThat(p20.isValid(s)).isEqualTo(expected);
   }
 }

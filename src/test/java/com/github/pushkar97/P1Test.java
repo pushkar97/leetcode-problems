@@ -15,7 +15,7 @@ class P1Test {
 
   P1 p1 = new P1();
 
-  static Stream<Arguments> longestCommonPrefix() {
+  static Stream<Arguments> twoSum() {
     return Stream.of(
         arguments(new int[] {2, 7, 11, 15}, 9, new int[] {0, 1}),
         arguments(new int[] {3, 2, 4}, 6, new int[] {1, 2}),
@@ -24,7 +24,7 @@ class P1Test {
 
   @ParameterizedTest
   @MethodSource
-  void longestCommonPrefix(int[] arr, int sum, int[] expected) {
+  void twoSum(int[] arr, int sum, int[] expected) {
     int[] range = p1.twoSum(arr, sum);
     Assertions.assertThat(range).isEqualTo(expected);
   }

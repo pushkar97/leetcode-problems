@@ -17,7 +17,7 @@ class P27Test {
 
   P27 p27 = new P27();
 
-  static Stream<Arguments> removeDuplicates() {
+  static Stream<Arguments> removeElement() {
     return Stream.of(
         arguments(new int[] {1}, 1, new int[] {}),
         arguments(new int[] {0, 1, 2, 2, 3, 0, 4, 2}, 2, new int[] {0, 1, 4, 0, 3}),
@@ -26,7 +26,7 @@ class P27Test {
 
   @ParameterizedTest
   @MethodSource
-  void removeDuplicates(int[] arr, int val, int[] expected) {
+  void removeElement(int[] arr, int val, int[] expected) {
     // when
     int size = p27.removeElement(arr, val);
 

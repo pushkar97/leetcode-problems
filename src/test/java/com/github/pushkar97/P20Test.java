@@ -15,7 +15,7 @@ class P20Test {
 
   P20 p20 = new P20();
 
-  static Stream<Arguments> longestCommonPrefix() {
+  static Stream<Arguments> isValid() {
     return Stream.of(
         arguments("(])", false),
         arguments("(]", false),
@@ -27,7 +27,7 @@ class P20Test {
 
   @ParameterizedTest
   @MethodSource
-  void longestCommonPrefix(String s, boolean expected) {
+  void isValid(String s, boolean expected) {
     boolean isValid = p20.isValid(s);
     Assertions.assertThat(isValid).isEqualTo(expected);
   }

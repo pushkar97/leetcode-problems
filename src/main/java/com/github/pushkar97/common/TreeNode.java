@@ -6,6 +6,10 @@ import java.util.Objects;
 public class TreeNode {
   int val;
 
+  public int getVal() {
+    return val;
+  }
+
   public void setLeft(final TreeNode left) {
     this.left = left;
   }
@@ -25,7 +29,7 @@ public class TreeNode {
   TreeNode left;
   TreeNode right;
 
-  TreeNode(int val) {
+  public TreeNode(int val) {
     this.val = val;
   }
 

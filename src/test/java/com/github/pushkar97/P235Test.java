@@ -31,6 +31,9 @@ class P235Test {
   @ParameterizedTest
   @MethodSource
   void invertTree(TreeNode input, TreeNode p, TreeNode q, TreeNode expected) {
-    assertThat(p235.lowestCommonAncestor(input, p, q).getVal()).isEqualTo(expected.getVal());
+    assertThat(p235.lowestCommonAncestor(input, p, q))
+        .isNotNull()
+        .extracting(TreeNode::getVal)
+        .isEqualTo(expected.getVal());
   }
 }

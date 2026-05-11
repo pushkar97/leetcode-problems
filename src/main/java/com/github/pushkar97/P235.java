@@ -1,8 +1,6 @@
 package com.github.pushkar97;
 
 import com.github.pushkar97.common.TreeNode;
-import java.util.ArrayDeque;
-import java.util.Deque;
 
 /**
  * Problem: <a
@@ -13,32 +11,13 @@ import java.util.Deque;
 public class P235 {
 
   public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-    ArrayDeque<TreeNode> path1 = new ArrayDeque<>();
-    ArrayDeque<TreeNode> path2 = new ArrayDeque<>();
-    findPath(root, p, path1);
-    findPath(root, q, path2);
-    TreeNode result = null;
-    while (!path1.isEmpty() && !path2.isEmpty()) {
-      TreeNode treeNode = path1.removeLast();
-      TreeNode treeNode1 = path2.removeLast();
-      if (treeNode.getVal() == treeNode1.getVal()) {
-        result = treeNode;
-      }
+    if (root == null) return null;
+    if (root.getVal() > p.getVal() && root.getVal() > q.getVal()) {
+      return lowestCommonAncestor(root.getLeft(), p, q);
     }
-    return result;
-  }
-
-  private boolean findPath(TreeNode root, TreeNode p, Deque<TreeNode> path) {
-    if (root == null) return false;
-    path.push(root);
-    if (root.getVal() == p.getVal()) return true;
-    if (findPath(root.getLeft(), p, path)) {
-      return true;
+    if (root.getVal() < p.getVal() && root.getVal() < q.getVal()) {
+      return lowestCommonAncestor(root.getRight(), p, q);
     }
-    if (findPath(root.getRight(), p, path)) {
-      return true;
-    }
-    path.pop();
-    return false;
+    return root;
   }
 }

@@ -1,10 +1,11 @@
 package com.github.pushkar97;
 
-import static com.github.pushkar97.P226.TreeNode.fromList;
+import static com.github.pushkar97.common.TreeNode.fromList;
 import static java.util.List.of;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
+import com.github.pushkar97.common.TreeNode;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -26,7 +27,7 @@ class P226Test {
 
   @ParameterizedTest
   @MethodSource
-  void isPalindrome(P226.TreeNode input, P226.TreeNode expected) {
+  void isPalindrome(TreeNode input, TreeNode expected) {
     assertThat(p226.invertTree(input)).isEqualTo(expected);
   }
 }

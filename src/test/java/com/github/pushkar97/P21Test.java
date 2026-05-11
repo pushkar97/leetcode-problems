@@ -1,10 +1,11 @@
 package com.github.pushkar97;
 
-import static com.github.pushkar97.P21.ListNode.fromList;
+import static com.github.pushkar97.common.ListNode.fromList;
 import static java.util.List.of;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
+import com.github.pushkar97.common.ListNode;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -24,7 +25,7 @@ class P21Test {
 
   @ParameterizedTest
   @MethodSource
-  void mergeTwoLists(P21.ListNode node1, P21.ListNode node2, P21.ListNode expected) {
+  void mergeTwoLists(ListNode node1, ListNode node2, ListNode expected) {
     assertThat(p21.mergeTwoLists(node1, node2)).isEqualTo(expected);
   }
 }

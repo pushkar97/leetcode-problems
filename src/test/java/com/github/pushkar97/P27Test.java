@@ -27,11 +27,9 @@ class P27Test {
   @ParameterizedTest
   @MethodSource
   void removeElement(int[] arr, int val, int[] expected) {
-    // when
-    int size = p27.removeElement(arr, val);
 
-    // then
-    assertThat(size).isEqualTo(expected.length);
+    assertThat(p27.removeElement(arr, val)).isEqualTo(expected.length);
+
     if (expected.length > 0) {
       assertThat(arr).startsWith(expected);
     }

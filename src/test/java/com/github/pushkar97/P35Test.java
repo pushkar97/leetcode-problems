@@ -9,7 +9,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 /**
- *
  * @author pushkardesai
  */
 class P35Test {
@@ -28,10 +27,6 @@ class P35Test {
   @ParameterizedTest
   @MethodSource
   void searchInsert(int[] arr, int val, int expected) {
-    // when
-    int index = p35.searchInsert(arr, val);
-
-    // then
-    assertThat(index).isEqualTo(expected);
+    assertThat(p35.searchInsert(arr, val)).isEqualTo(expected);
   }
 }

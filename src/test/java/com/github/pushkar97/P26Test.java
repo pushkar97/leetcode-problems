@@ -25,11 +25,7 @@ class P26Test {
   @ParameterizedTest
   @MethodSource
   void removeDuplicates(int[] input, int[] expected) {
-    // when
-    int duplicates = p26.removeDuplicates(input);
-
-    // then
-    assertThat(duplicates).isEqualTo(expected.length);
+    assertThat(p26.removeDuplicates(input)).isEqualTo(expected.length);
     assertThat(input).startsWith(expected);
   }
 }

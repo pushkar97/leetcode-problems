@@ -1,5 +1,6 @@
 package com.github.pushkar97;
 
+import static com.github.pushkar97.common.TreeNode.NULL;
 import static com.github.pushkar97.common.TreeNode.fromList;
 import static java.util.List.of;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,7 +23,7 @@ class P235Test {
     return Stream.of(
         arguments(fromList(of(1, 2)), new TreeNode(1), new TreeNode(2), fromList(of(1, 2))),
         arguments(
-            fromList(of(6, 2, 8, 0, 4, 7, 9, Integer.MIN_VALUE, Integer.MIN_VALUE, 3, 5)),
+            fromList(of(6, 2, 8, 0, 4, 7, 9, NULL, NULL, 3, 5)),
             new TreeNode(2),
             new TreeNode(4),
             new TreeNode(2)));

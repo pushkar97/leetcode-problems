@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class TreeNode {
+
+  public static int NULL = Integer.MIN_VALUE;
+
   int val;
 
   public int getVal() {
@@ -73,7 +76,7 @@ public class TreeNode {
 
   private static TreeNode populate(List<Integer> list, int index) {
     if (index >= list.size()) return null;
-    if (list.get(index) == Integer.MIN_VALUE) return null;
+    if (list.get(index) == NULL) return null;
 
     return new TreeNode(
         list.get(index), populate(list, index * 2 + 1), populate(list, index * 2 + 2));

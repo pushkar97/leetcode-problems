@@ -3,6 +3,7 @@ package com.github.pushkar97;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
+import com.github.pushkar97.common.SolRef;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -12,8 +13,6 @@ import org.junit.jupiter.params.provider.MethodSource;
  * @author pushkardesai
  */
 class P35Test {
-
-  P35 p35 = new P35();
 
   static Stream<Arguments> searchInsert() {
     return Stream.of(
@@ -26,7 +25,7 @@ class P35Test {
 
   @ParameterizedTest
   @MethodSource
-  void searchInsert(int[] arr, int val, int expected) {
+  void searchInsert(int[] arr, int val, int expected, @SolRef P35 p35) {
     assertThat(p35.searchInsert(arr, val)).isEqualTo(expected);
   }
 }

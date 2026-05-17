@@ -1,5 +1,7 @@
 package com.github.pushkar97;
 
+import com.github.pushkar97.common.SolRef;
+import com.github.pushkar97.common.SolutionSupplier;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
@@ -14,8 +16,6 @@ import org.junit.jupiter.params.provider.MethodSource;
  */
 class P14Test {
 
-  P14 p14 = new P14();
-
   static Stream<Arguments> longestCommonPrefix() {
     return Stream.of(
         arguments(List.of("flower", "flow", "flight").toArray(String[]::new), "fl"),
@@ -24,7 +24,7 @@ class P14Test {
 
   @ParameterizedTest
   @MethodSource
-  void longestCommonPrefix(String[] arr, String expected) {
+  void longestCommonPrefix(String[] arr, String expected, @SolRef P14 p14) {
     assertThat(p14.longestCommonPrefix(arr)).isEqualTo(expected);
   }
 }

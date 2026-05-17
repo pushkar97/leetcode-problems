@@ -1,6 +1,9 @@
 package com.github.pushkar97;
 
+import com.github.pushkar97.common.SolRef;
+import com.github.pushkar97.common.SolutionSupplier;
 import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.extension.ExtendWith;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.stream.Stream;
@@ -11,9 +14,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 /**
  * @author pushkardesai
  */
+@ExtendWith({SolutionSupplier.class})
 class P1Test {
-
-  P1 p1 = new P1();
 
   static Stream<Arguments> twoSum() {
     return Stream.of(
@@ -24,7 +26,7 @@ class P1Test {
 
   @ParameterizedTest
   @MethodSource
-  void twoSum(int[] arr, int sum, int[] expected) {
+  void twoSum(int[] arr, int sum, int[] expected, @SolRef P1 p1) {
     assertThat(p1.twoSum(arr, sum)).isEqualTo(expected);
   }
 }

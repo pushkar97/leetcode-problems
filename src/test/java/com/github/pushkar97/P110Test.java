@@ -6,6 +6,7 @@ import static java.util.List.of;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
+import com.github.pushkar97.common.SolRef;
 import com.github.pushkar97.common.TreeNode;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,8 +17,6 @@ import org.junit.jupiter.params.provider.MethodSource;
  * @author pushkardesai
  */
 class P110Test {
-
-  P110 p110 = new P110();
 
   static Stream<Arguments> isBalanced() {
 
@@ -31,7 +30,7 @@ class P110Test {
 
   @ParameterizedTest
   @MethodSource
-  void isBalanced(TreeNode input, boolean expected) {
+  void isBalanced(TreeNode input, boolean expected, @SolRef P110 p110) {
     assertThat(p110.isBalanced(input)).isEqualTo(expected);
   }
 }

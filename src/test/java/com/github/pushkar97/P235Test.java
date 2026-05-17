@@ -6,6 +6,7 @@ import static java.util.List.of;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
+import com.github.pushkar97.common.SolRef;
 import com.github.pushkar97.common.TreeNode;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,8 +17,6 @@ import org.junit.jupiter.params.provider.MethodSource;
  * @author pushkardesai
  */
 class P235Test {
-
-  P235 p235 = new P235();
 
   static Stream<Arguments> invertTree() {
     return Stream.of(
@@ -31,7 +30,7 @@ class P235Test {
 
   @ParameterizedTest
   @MethodSource
-  void invertTree(TreeNode input, TreeNode p, TreeNode q, TreeNode expected) {
+  void invertTree(TreeNode input, TreeNode p, TreeNode q, TreeNode expected, @SolRef P235 p235) {
     assertThat(p235.lowestCommonAncestor(input, p, q))
         .isNotNull()
         .extracting(TreeNode::getVal)

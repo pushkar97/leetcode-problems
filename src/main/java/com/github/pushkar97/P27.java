@@ -5,7 +5,7 @@ package com.github.pushkar97;
  *
  * @author pushkardesai
  */
-class P27 {
+public class P27 {
 
   public int removeElement(int[] nums, int val) {
     int j = nums.length - 1;

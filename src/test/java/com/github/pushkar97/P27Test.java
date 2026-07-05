@@ -1,6 +1,8 @@
 package com.github.pushkar97;
 
+import com.github.pushkar97.common.SolutionSupplier;
 import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.extension.ExtendWith;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import com.github.pushkar97.common.SolRef;
@@ -14,6 +16,7 @@ import org.junit.jupiter.params.provider.MethodSource;
  *
  * @author pushkardesai
  */
+@ExtendWith({SolutionSupplier.class})
 class P27Test {
 
   static Stream<Arguments> removeElement() {

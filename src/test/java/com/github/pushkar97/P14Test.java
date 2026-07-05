@@ -3,6 +3,7 @@ package com.github.pushkar97;
 import com.github.pushkar97.common.SolRef;
 import com.github.pushkar97.common.SolutionSupplier;
 import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.extension.ExtendWith;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 /**
  * @author pushkardesai
  */
+@ExtendWith({SolutionSupplier.class})
 class P14Test {
 
   static Stream<Arguments> longestCommonPrefix() {
